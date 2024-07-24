@@ -1,0 +1,16 @@
+﻿@model List<ASP.Net_1.Entities.FastFood>
+<!DOCTYPE
+<html>
+<head>
+    <title>Fast Foods</title>
+</head>
+<body>
+    <h2>Fast Foods</h2>
+    @foreach (var food in Model)
+    {
+        <h2>Id : @food.Id</h2>
+        <p>Name : @food.Name</p>
+        <p>Price : @food.Price</p>
+    }
+</body>
+</html>

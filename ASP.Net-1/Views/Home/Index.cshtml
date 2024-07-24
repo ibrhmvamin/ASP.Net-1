@@ -1,0 +1,39 @@
+﻿@model ASP.Net_1.Models.MealsViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meals</title>
+</head>
+<body>
+    <div>
+    <h1>Drinks</h1>
+        @foreach (var drink in Model.Drinks)
+        {
+            <h2>Id : @drink.Id</h2>
+            <p>Name : @drink.Name</p>
+            <p>Price : @drink.Price $</p>
+        }
+    </div>
+
+    <div>
+    <h1>Fast Foods</h1>
+        @foreach (var fastFood in Model.FastFoods)
+        {
+            <h2>Id : @fastFood.Id</h2>
+            <p>Name : @fastFood.Name</p>
+            <p>Price : @fastFood.Price $</p>
+        }
+    </div>
+
+    <div>
+    <h1>Hot Meals</h1>
+        @foreach (var hotMeal in Model.HotMeals)
+        {
+            <h2>Id : @hotMeal.Id</h2>
+            <p>Name : @hotMeal.Name</p>
+            <p>Price : @hotMeal.Price $</p>
+        }
+    </div>
+</body>
+</html>

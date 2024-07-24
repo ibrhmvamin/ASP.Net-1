@@ -1,0 +1,17 @@
+﻿@model List<ASP.Net_1.Entities.Drink>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drinks</title>
+</head>
+<body>
+    <h1>Drinks</h1>
+    @foreach(var drink in Model)
+    {
+        <h2>Id : @drink.Id</h2>
+        <p>Name : @drink.Name</p>
+        <p>Price : @drink.Price</p>
+    }
+</body>
+</html>
