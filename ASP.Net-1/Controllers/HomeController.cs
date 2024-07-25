@@ -12,16 +12,7 @@ namespace ASP.Net_1.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
-        public IActionResult Index()
-        {
-            List<Drink> drinks = new List<Drink>
+        List<Drink> drinks = new List<Drink>
     {
         new Drink
         {
@@ -43,7 +34,7 @@ namespace ASP.Net_1.Controllers
         }
     };
 
-            List<HotMeal> hotMeals = new List<HotMeal>
+        List<HotMeal> hotMeals = new List<HotMeal>
     {
         new HotMeal
         {
@@ -65,7 +56,7 @@ namespace ASP.Net_1.Controllers
         }
     };
 
-            List<FastFood> fastFoods = new List<FastFood>
+        List<FastFood> fastFoods = new List<FastFood>
     {
         new FastFood
         {
@@ -86,9 +77,8 @@ namespace ASP.Net_1.Controllers
             Price = 3.49
         }
     };
-
-
-
+        public IActionResult Index()
+        {
             var viewModel = new MealsViewModel()
             {
                 Drinks = drinks,
@@ -101,82 +91,30 @@ namespace ASP.Net_1.Controllers
 
         public IActionResult Drinks()
         {
-            List<Drink> drinks = new List<Drink>
+            var vm = new MealsViewModel()
             {
-        new Drink
-        {
-            Id = 1,
-            Name = "Coca Cola",
-            Price = 1.50
-        },
-        new Drink
-        {
-            Id = 2,
-            Name = "Pepsi",
-            Price = 1.75
-        },
-        new Drink
-        {
-            Id = 3,
-            Name = "Sprite",
-            Price = 1.60
-        }
-             };
-            return View(drinks);
+                Drinks=drinks
+            };
+            return View(vm);
         }
 
         public IActionResult HotMeals()
         {
-            List<HotMeal> hotMeals = new List<HotMeal>
-    {
-        new HotMeal
-        {
-            Id = 1,
-            Name = "Grilled Chicken",
-            Price = 8.50
-        },
-        new HotMeal
-        {
-            Id = 2,
-            Name = "Beef Stroganoff",
-            Price = 9.75
-        },
-        new HotMeal
-        {
-            Id = 3,
-            Name = "Vegetable Stir-fry",
-            Price = 7.00
-        }
-    };
 
-            return View(hotMeals);
+            var vm = new MealsViewModel()
+            {
+                HotMeals = hotMeals
+            };
+            return View(vm);
         }
 
         public IActionResult FastFoods()
         {
-            List<FastFood> fastFoods = new List<FastFood>
-    {
-        new FastFood
-        {
-            Id = 1,
-            Name = "Burger",
-            Price = 5.99
-        },
-        new FastFood
-        {
-            Id = 2,
-            Name = "Fries",
-            Price = 2.99
-        },
-        new FastFood
-        {
-            Id = 3,
-            Name = "Hot Dog",
-            Price = 3.49
-        }
-    };
-
-            return View(fastFoods);
+            var vm = new MealsViewModel()
+            {
+                FastFoods = fastFoods
+            };
+            return View(vm);
         }
 
 

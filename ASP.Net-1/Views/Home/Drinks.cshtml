@@ -1,4 +1,4 @@
-﻿@model List<ASP.Net_1.Entities.Drink>
+﻿@model ASP.Net_1.Models.MealsViewModel
 
 <!DOCTYPE html>
 <html>
@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Drinks</h1>
-    @foreach(var drink in Model)
+    @foreach(var drink in Model.Drinks)
     {
         <h2>Id : @drink.Id</h2>
         <p>Name : @drink.Name</p>

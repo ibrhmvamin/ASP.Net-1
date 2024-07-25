@@ -1,11 +1,11 @@
-﻿@model List<ASP.Net_1.Entities.HotMeal>
+﻿@model ASP.Net_1.Models.MealsViewModel
 <!DOCTYPE <html >
     <head>
         <title>Hot Meals</title>
     </head>
     <body>
         <h2>Hot Meals</h2>
-    @foreach(var meal in Model)
+    @foreach(var meal in Model.HotMeals)
     {
         <h2>Id : @meal.Id</h2>
         <p>Name : @meal.Name</p>
